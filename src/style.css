@@ -1,20 +1,32 @@
 .gameboard{
     height: 600px;
     width: 600px;
-    background-color: aqua;
+    /* background-color: aqua; */
 }
 .col1{
     width: 100%;
     height: 33%;
-    background-color: rgb(117, 67, 67);
+    /* background-color: rgb(117, 67, 67); */
+
+    display: flex;
 }
 .col2{
-    background-color: rgb(18, 143, 12);
+    /* background-color: rgb(18, 143, 12); */
     width: 100%;
     height: 33%;
+
+    display: flex;
 }
 .col3{
-    background-color: rgb(71, 12, 103);
+    /* background-color: rgb(71, 12, 103); */
     width: 100%;
     height: 33%;
+
+    display: flex;
+}
+
+.box{
+    width: 33%;
+    height: 100%;
+    border: 1px solid red;
 }
