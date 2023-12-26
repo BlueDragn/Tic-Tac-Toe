@@ -10,7 +10,7 @@ function myFunction1(){
         name:"p1",
         marker:marker1Value,
     }
-    alert("player1: " + playerOne.marker);
+    // alert("player1: " + playerOne.marker);
     return playerOne.marker;
 
 };
