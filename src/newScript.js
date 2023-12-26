@@ -30,10 +30,37 @@ const myObject = {
 };
 
 //Game play
-//1. ask user where he wants to marks eg. @1
-const markingSpot = prompt("Enter the spot");
-//2. Add the marker of player1 there by updating the Game board
-myObject.my2DArray[0][markingSpot - 1] = player1Marker;
-console.log(myObject.my2DArray);
-//3. Check for win/loss
-//4. pass hand to player2
+let playerTurn = 1;
+if (playerTurn === 1) {
+  //1. ask user where he wants to marks eg. @1
+  const markingSpot = prompt("Enter the spot");
+
+  //2. Add the marker of player1 there by updating the gameboard
+
+  switch (true) {
+    case markingSpot > 0 && markingSpot < 4:
+      // expression for the first case
+      myObject.my2DArray[0][markingSpot - 1] = player1Marker;
+      playerTurn++;
+      console.log(myObject.my2DArray);
+      break;
+
+    case markingSpot > 3 && markingSpot < 7:
+      // expression for the second case
+      myObject.my2DArray[1][markingSpot - 4] = player1Marker;
+      playerTurn++;
+      console.log(myObject.my2DArray);
+      break;
+
+    case markingSpot > 6 && markingSpot < 10:
+      // expression for the third case
+      myObject.my2DArray[2][markingSpot - 7] = player1Marker;
+      playerTurn++;
+      console.log(myObject.my2DArray);
+      break;
+
+    default:
+      // expression for other cases or handle invalid input
+      console.log("invalid input");
+  }
+}
