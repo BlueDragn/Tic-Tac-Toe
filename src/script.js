@@ -1,5 +1,6 @@
 
-
+let currentPlayer = 1;
+let box1 = document.getElementById("b1");
 
 
 function myFunction1(){
@@ -28,4 +29,15 @@ const marker2Value = marker2.value;
 
 };
 
+//Game board object
+const gameBoard = {
+    gameboard : [1,2,3,4,5,6,7,8,9],
+};
 
+
+box1.addEventListener('click', function(){
+    let m = myFunction1();
+    box1.textContent = m;
+    console.log(box1.textContent);
+
+});
