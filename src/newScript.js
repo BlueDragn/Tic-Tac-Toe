@@ -31,6 +31,8 @@ const myObject = {
 
 //Game play
 let playerTurn = 1;
+
+//Player1 Hand
 if (playerTurn === 1) {
   //1. ask user where he wants to marks eg. @1
   const markingSpot = prompt("Enter the spot");
@@ -63,4 +65,61 @@ if (playerTurn === 1) {
       // expression for other cases or handle invalid input
       console.log("invalid input");
   }
+}
+
+//Player2 Hand
+if (playerTurn === 2) {
+  //1. ask user where he wants to marks eg. @1
+  const markingSpot = prompt("Enter the spot");
+
+  //2. Add the marker of player1 there by updating the gameboard
+
+  switch (true) {
+    case markingSpot > 0 && markingSpot < 4:
+      // expression for the first case
+      myObject.my2DArray[0][markingSpot - 1] = player2Marker;
+      playerTurn--;
+      console.log(myObject.my2DArray);
+      break;
+
+    case markingSpot > 3 && markingSpot < 7:
+      // expression for the second case
+      myObject.my2DArray[1][markingSpot - 4] = player2Marker;
+      playerTurn--;
+      console.log(myObject.my2DArray);
+      break;
+
+    case markingSpot > 6 && markingSpot < 10:
+      // expression for the third case
+      myObject.my2DArray[2][markingSpot - 7] = player2Marker;
+      playerTurn--;
+      console.log(myObject.my2DArray);
+      break;
+
+    default:
+      // expression for other cases or handle invalid input
+      console.log("invalid input");
+  }
+}
+
+// Deciding the Result of the game
+
+if (condition) {
+  
+}else if (condition) {
+
+}else{
+
+};
+
+for(let i = 0; i < 3; i++){
+  for(let j = 0; j < 3; j++){
+    if(myObject.my2DArray[i][j] === 0 || myObject.my2DArray[j][i] === 0 || myObject.my2DArray[i][i] === 0 || myObject.my2DArray[i][2-i] === 0 ){
+console.log("winner is player with marker 0");
+    }else if  (myObject.my2DArray[i][j] === X || myObject.my2DArray[j][i] === X || myObject.my2DArray[i][i] === X || myObject.my2DArray[i][2-i] === X){
+    console.log("winner is player with marker X");
+  }else{
+    console.log("Its a Draw");
+  }
+}
 }
