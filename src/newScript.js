@@ -104,22 +104,34 @@ if (playerTurn === 2) {
 
 // Deciding the Result of the game
 
-if (condition) {
-  
-}else if (condition) {
-
-}else{
-
-};
-
-for(let i = 0; i < 3; i++){
-  for(let j = 0; j < 3; j++){
-    if(myObject.my2DArray[i][j] === 0 || myObject.my2DArray[j][i] === 0 || myObject.my2DArray[i][i] === 0 || myObject.my2DArray[i][2-i] === 0 ){
-console.log("winner is player with marker 0");
-    }else if  (myObject.my2DArray[i][j] === X || myObject.my2DArray[j][i] === X || myObject.my2DArray[i][i] === X || myObject.my2DArray[i][2-i] === X){
-    console.log("winner is player with marker X");
-  }else{
-    console.log("Its a Draw");
+function gameResult(myObject) {
+  let allEqualX = true;
+  let allEqualO = true;
+  for (let i = 0; i < 3; i++) {
+    for (let j = 0; j < 3; j++) {
+      if (
+        myObject.my2DArray[i][j] !== "O" ||
+        myObject.my2DArray[j][i] !== "O" ||
+        myObject.my2DArray[i][i] !== "O" ||
+        myObject.my2DArray[i][2 - i] !== "O"
+      ) {
+        allEqualO = false;
+      } else if (
+        myObject.my2DArray[i][j] !== "X" ||
+        myObject.my2DArray[j][i] !== "X" ||
+        myObject.my2DArray[i][i] !== "X" ||
+        myObject.my2DArray[i][2 - i] !== "X"
+      ) {
+        allEqualX = false;
+      }
+    }
   }
-}
+  // Check if there's a winner
+  if (allEqualX) {
+    return "X wins";
+  } else if (allEqualO) {
+    return "O wins";
+  } else {
+    return "It's a draw";
+  }
 }
